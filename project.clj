@@ -1,4 +1,4 @@
-(defproject cnuernber/garmin-fit-clj "0.1-SNAPSHOT"
+(defproject cnuernber/garmin-fit-clj "0.1"
   :description "Clojure reader for garming fit files"
   :url "http://github.com/cnuernber/garmin-fit-clj"
   :license {:name "Eclipse Public License"
