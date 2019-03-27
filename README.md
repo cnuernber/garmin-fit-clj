@@ -4,9 +4,13 @@ A Clojure library designed to decode garmin fit files.
 
 ## Usage
 
+```clojure
+
 (require '[cnuernber/garmin-fit :as fit])
 
 (fit/decode filename) ;;-> You get back a sequence of records from the file.
+
+```
 
 ## License
 
