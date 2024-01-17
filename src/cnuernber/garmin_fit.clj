@@ -149,7 +149,7 @@
 
 (defn timestamp->date
   ^Date [^long ts]
-  (Date. (* 1000 (+ ts (long fit-timestamp-seconds-base)))))
+  (Date. ^long (* 1000 (+ ts (long fit-timestamp-seconds-base)))))
 
 (defrecord RecListener [result-chan]
   RecordMesgListener
