@@ -55,13 +55,13 @@
     (async/>!! result-chan
            (merge
             {:event-type :device-info
-             :batter-status (case (.getBatteryStatus mesg)
-                              BatteryStatus/CRITICAL :critical
-                              BatteryStatus/GOOD :good
-                              BatteryStatus/LOW :low
-                              BatteryStatus/NEW :new
-                              BatteryStatus/OK :ok
-                              :invalid)}
+             :battery-status (case (.getBatteryStatus mesg)
+                               BatteryStatus/CRITICAL :critical
+                               BatteryStatus/GOOD :good
+                               BatteryStatus/LOW :low
+                               BatteryStatus/NEW :new
+                               BatteryStatus/OK :ok
+                               :invalid)
             (when-let [timestamp (.getTimestamp mesg)]
               {:timestamp timestamp})))))
 
