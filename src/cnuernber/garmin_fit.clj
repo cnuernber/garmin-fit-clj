@@ -62,6 +62,9 @@
                                BatteryStatus/NEW :new
                                BatteryStatus/OK :ok
                                :invalid)
+             :battery-level (.getBatteryLevel mesg)
+             :product-name (.getProductName mesg)
+             :serial-number (.getSerialNumber mesg)}
             (when-let [timestamp (.getTimestamp mesg)]
               {:timestamp timestamp})))))
 
