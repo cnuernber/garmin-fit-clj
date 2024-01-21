@@ -32,7 +32,31 @@
                                  (.getValue))
                :manufacturer (.getManufacturer mesg)
                :product (.getProduct mesg)
+               :product-name (.getProductName mesg)
                :serial-number (.getSerialNumber mesg)
+               :type (condp = (.getType mesg)
+                       com.garmin.fit.File/ACTIVITY :activity
+                       com.garmin.fit.File/ACTIVITY_SUMMARY :activity-summary
+                       com.garmin.fit.File/BLOOD_PRESSURE :blood-pressure
+                       com.garmin.fit.File/COURSE :course
+                       com.garmin.fit.File/DEVICE :device
+                       com.garmin.fit.File/EXD_CONFIGURATION :exd-configuration
+                       com.garmin.fit.File/GOALS :goals
+                       com.garmin.fit.File/INVALID :invalid
+                       com.garmin.fit.File/MFG_RANGE_MAX :mfg-range-max
+                       com.garmin.fit.File/MFG_RANGE_MIN :mfg-range-min
+                       com.garmin.fit.File/MONITORING_A :monitoring-a
+                       com.garmin.fit.File/MONITORING_B :monitoring-b
+                       com.garmin.fit.File/MONITORING_DAILY :monitoring-daily
+                       com.garmin.fit.File/SCHEDULES :schedules
+                       com.garmin.fit.File/SEGMENT :segment
+                       com.garmin.fit.File/SEGMENT_LIST :segment-list
+                       com.garmin.fit.File/SETTINGS :settings
+                       com.garmin.fit.File/SPORT :sport
+                       com.garmin.fit.File/TOTALS :totals
+                       com.garmin.fit.File/WEIGHT :weight
+                       com.garmin.fit.File/WORKOUT :workout
+                       :unknown)
                :number (.getNumber mesg)})))
 
 (defrecord UserProfileListener [result-chan]
