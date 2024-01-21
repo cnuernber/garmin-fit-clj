@@ -55,13 +55,13 @@
     (async/>!! result-chan
            (merge
             {:event-type :device-info
-             :battery-status (case (.getBatteryStatus mesg)
+             :battery-status (condp = (.getBatteryStatus mesg)
                                BatteryStatus/CRITICAL :critical
                                BatteryStatus/GOOD :good
                                BatteryStatus/LOW :low
                                BatteryStatus/NEW :new
                                BatteryStatus/OK :ok
-                               :invalid)
+                               :unknown)
              :battery-level (.getBatteryLevel mesg)
              :product-name (.getProductName mesg)
              :serial-number (.getSerialNumber mesg)}
