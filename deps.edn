@@ -1,0 +1,8 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        techascent/tech.parallel {:mvn/version "2.11"}
+        camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.3"}
+        commons-io/commons-io {:mvn/version "2.15.1"}
+        com.garmin/fit {:mvn/version "21.126.0"}
+        }
+ }
